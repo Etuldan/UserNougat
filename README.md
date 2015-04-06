@@ -7,8 +7,8 @@ UserNougat is PHP user management system with a plugin system to link with other
 User will have to register once on UserNougat, and their credentials will works for the linked plaforms.  
 Currently, there are plugins for PhpBB boards and Owncloud. If you want to develop your own plugin and distribute it, fell free to commit it on this repository !  
 
-How does it works ?
--------------------
+How does it work ?
+------------------
 UserNougat is a fork of the [UserCake](http://usercake.com) PHP user management. The main modification is the plugin system.  
 Every plugin perform a database insert/modification in the targeted platform tables to add/modify users credentials.  
 They also forbid any modification of the credentials directly in the targeted platform.
