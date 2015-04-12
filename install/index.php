@@ -68,7 +68,7 @@ if(isset($_GET["install"]))
 	
 	$user_permission_matches_entry = "
 	INSERT INTO `".$db_table_prefix."user_permission_matches` (`id`, `user_id`, `permission_id`) VALUES
-	(1, 1, 2);
+	(1, 100, 2);
 	";
 	
 	$configuration_sql = "
