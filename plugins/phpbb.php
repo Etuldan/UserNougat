@@ -1,7 +1,7 @@
 <?
 /*
 UserNougat
-https://github.com/griffin0/UserNougat
+https://github.com/Etuldan/UserNougat
 */
 Class PhpBB_Module {
 	private $db_table_plugin_prefix = "phpbb_";

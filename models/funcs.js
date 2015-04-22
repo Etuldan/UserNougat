@@ -1,6 +1,6 @@
 /*
 UserNougat
-https://github.com/griffin0/UserNougat
+https://github.com/Etuldan/UserNougat
 */
 function showHide(div){
 	if(document.getElementById(div).style.display = 'block'){
