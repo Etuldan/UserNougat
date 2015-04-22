@@ -14,18 +14,23 @@ Class Template_Module {
 	}
 	
 	public function createUser($id, $username, $displayname, $clean_password, $email) {
+		return true;
 	}
 	
-	public function updatePassword($id, $username, $clean_password) {
+	public function updatePassword($id, $username, $displayname, $clean_password) {
+		return true;
 	}
 	
-	public function updateEmail($id, $username, $email) {
+	public function updateEmail($id, $username, $displayname, $email) {
+		return true;
 	}
 	
 	public function install() {
+		return true;
 	}
 			
-	public function setAsAdmin($id, $username) {
+	public function setAsAdmin($id, $username, $displayname) {
+		return true;
 	}
 }
 

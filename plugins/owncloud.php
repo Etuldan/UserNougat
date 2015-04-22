@@ -14,7 +14,7 @@ Class Owncloud_Module {
 		$this->mysqli = $connector_sql;
 	}
 	
-	public function setAsAdmin($id, $username) {
+	public function setAsAdmin($id, $username, $displayname) {
 		if($stmt = $this->mysqli->prepare("INSERT INTO ".$this->db_table_plugin_prefix."group_user (
 				gid,
 				uid
@@ -72,13 +72,13 @@ Class Owncloud_Module {
 		return true;
 	}
 	
-	public function updatePassword($id, $username, $clean_password) {
+	public function updatePassword($id, $username, $displayname, $clean_password) {
 		if($stmt = $this->mysqli->prepare("UPDATE ".$this->db_table_plugin_prefix."users
 				SET
 				password = ?
 				WHERE
 				uid = ?")) {
-			$stmt->bind_param("ss", $this->$this->hash($clean_password), $username);
+			$stmt->bind_param("ss", $this->hash($clean_password), $displayname);
 			$stmt->execute();
 			$stmt->close();
 		} else {
@@ -87,7 +87,7 @@ Class Owncloud_Module {
 		return true;
 	}
 	
-	public function updateEmail($id, $username, $email) {
+	public function updateEmail($id, $username, $displayname, $email) {
 		if($stmt = $this->mysqli->prepare("UPDATE ".$this->db_table_plugin_prefix."preferences
 				SET
 				configvalue = ?
@@ -95,7 +95,7 @@ Class Owncloud_Module {
 				userid = ? AND
 				appid = 'settings' AND
 				configkey = 'email")) {
-			$stmt->bind_param("ss", $email, $username);
+			$stmt->bind_param("ss", $email, $displayname);
 			$stmt->execute();
 			$stmt->close();	
 		} else {
@@ -105,6 +105,7 @@ Class Owncloud_Module {
 	}
 	
 	public function install() {
+		return true;
 	}
 	
 	

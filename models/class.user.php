@@ -57,7 +57,7 @@ class loggedInUser {
 		
 		foreach (glob("plugins/*.php") as $filename) {
 			include($filename);
-			$module->updatePassword($this->user_id, $this->username, $pass);
+			$module->updatePassword($this->user_id, $this->username, $this->displayname, $pass);
 		}		
 	}
 	
