@@ -1,7 +1,7 @@
 <?php 
 /*
-UserCake Version: 2.0.1
-http://usercake.com
+UserNougat
+https://github.com/griffin0/UserNougat
 */
 require_once("models/config.php");
 if (!securePage($_SERVER['PHP_SELF'])){die();}
