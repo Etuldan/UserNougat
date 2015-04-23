@@ -52,6 +52,10 @@ if(!empty($_GET["confirm"]))
 						$errors[] = lang("SQL_ERROR");
 					}
 					else {
+						foreach (glob("plugins/*.php") as $filename) {
+							include($filename);
+							$module->updatePassword($userdetails["id"], $userdetails["user_name"], $userdetails["display_name"], $rand_pass);
+						}
 						$successes[]  = lang("FORGOTPASS_NEW_PASS_EMAIL");
 					}
 				}
