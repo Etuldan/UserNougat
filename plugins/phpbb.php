@@ -1,7 +1,7 @@
 <?
 /*
 UserNougat
-https://github.com/griffin0/UserNougat
+https://github.com/Etuldan/UserNougat
 */
 Class PhpBB_Module {
 	private $db_table_plugin_prefix = "phpbb_";
@@ -13,7 +13,7 @@ Class PhpBB_Module {
 		$this->mysqli = $connector_sql;
 	}
 	
-	public function setAsAdmin($id, $username) {
+	public function setAsAdmin($id, $username, $displayname) {
 		//Set user as Founder and default group Administrator
 		if($stmt = $this->mysqli->prepare("UPDATE ".$this->db_table_plugin_prefix."users
 				SET
@@ -131,7 +131,7 @@ Class PhpBB_Module {
 		return true;
 	}
 	
-	public function updatePassword($id, $username, $clean_password) {
+	public function updatePassword($id, $username, $displayname, $clean_password) {
 		if($stmt = $this->mysqli->prepare("UPDATE ".$this->db_table_plugin_prefix."users
 				SET
 				user_password = ?
@@ -146,7 +146,7 @@ Class PhpBB_Module {
 		return true;
 	}
 	
-	public function updateEmail($id, $username, $email) {
+	public function updateEmail($id, $username, $displayname, $email) {
 		if($stmt = $this->mysqli->prepare("UPDATE ".$this->db_table_plugin_prefix."users
 				SET
 				user_email = ?

@@ -1,7 +1,7 @@
 <?php
 /*
 UserNougat
-https://github.com/griffin0/UserNougat
+https://github.com/Etuldan/UserNougat
 */
 session_start();
 $md5_hash = md5(rand(0,99999)); 
