@@ -19,7 +19,7 @@ if(!empty($_GET["confirm"]))
 	else
 	{
 		$rand_pass = getUniqueCode(15); //Get unique code
-		$secure_pass = generateHash($rand_pass); //Generate random hash
+		$secure_pass = password_hash($pass, PASSWORD_DEFAULT); 
 		$userdetails = fetchUserDetails(NULL,$token); //Fetchs user details
 		$mail = new userNougatMail();		
 		

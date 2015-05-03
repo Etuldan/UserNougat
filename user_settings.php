@@ -25,7 +25,7 @@ if(!empty($_POST))
 	//Feel free to edit / change as required
 	
 	//Confirm the hashes match before updating a users password
-	$entered_pass = generateHash($password,$loggedInUser->hash_pw);
+	$entered_pass = password_hash($pass, PASSWORD_DEFAULT); 
 	
 	if (trim($password) == ""){
 		$errors[] = lang("ACCOUNT_SPECIFY_PASSWORD");
@@ -81,7 +81,8 @@ if(!empty($_POST))
 		if(count($errors) == 0)
 		{
 			//Also prevent updating if someone attempts to update with the same password
-			$entered_pass_new = generateHash($password_new,$loggedInUser->hash_pw);
+			$entered_pass = password_hash($pass, PASSWORD_DEFAULT); 
+			
 			
 			if($entered_pass_new == $loggedInUser->hash_pw)
 			{

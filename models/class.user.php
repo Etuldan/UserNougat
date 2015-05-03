@@ -44,7 +44,7 @@ class loggedInUser {
 	public function updatePassword($pass)
 	{
 		global $mysqli,$db_table_prefix;
-		$secure_pass = generateHash($pass);
+		$secure_pass = password_hash($pass, PASSWORD_DEFAULT); 
 		$this->hash_pw = $secure_pass;
 		$stmt = $mysqli->prepare("UPDATE ".$db_table_prefix."users
 			SET

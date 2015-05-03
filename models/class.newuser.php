@@ -58,7 +58,7 @@ class User
 		if($this->status)
 		{
 			//Construct a secure hash for the plain text password
-			$secure_pass = generateHash($this->clean_password);
+			$secure_pass = password_hash($this->clean_password, PASSWORD_DEFAULT); 
 			
 			//Construct a unique activation token
 			$this->activation_token = generateActivationToken();

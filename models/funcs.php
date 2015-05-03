@@ -67,6 +67,7 @@ function generateActivationToken($gen = null)
 }
 
 //@ Thanks to - http://phpsec.org
+// DEPRECATED - DO NOT USE
 function generateHash($plainText, $salt = null)
 {
 	if ($salt === null)
